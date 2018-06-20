@@ -1,0 +1,242 @@
+// Creates a grid container
+.bs-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// Represents a grid layout item
+.bs-panel {
+  flex: 1 1 500px;
+  &-tall {
+    grid-row-end: span 2;
+  }
+}
+
+.bs-footer, .bs-header {
+  flex: 0 1 100%;
+  grid-column: 1 / -1;
+  background-color: green;
+}
+
+.bs-background-image {
+
+}
+
+.bs-full-page {
+  height: 100vh;
+  background-color: green;
+}
+
+.content-wrapper {
+  background-image: url("../assets/raster/new-zealand-small.png");
+  background-position: right top;
+  background-size: cover;
+  height: 100vh;
+}
+
+// Page specific
+
+
+.clipper {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(18, 107, 179, 0.82);
+  position: absolute;
+  z-index: -5;
+}
+
+.main {
+  width: 100%;
+  height: calc(100vh - 96px);
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff;
+  background-image: url("../assets/raster/new-zealand-move.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  background: #fff;
+  left: 0;
+  height: 40%;
+  transform: translateY(50%) skewY(-4deg);
+  bottom: -10vh;
+  width: 100%;
+  z-index: -3;
+}
+
+.main-internal {
+  display: flex;
+  //justify-content: center;
+  //align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 35px;
+  color: #5f5f5f
+}
+
+.cta-slugline {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 35px;
+  color: white;
+  align-self: center;
+  margin-left: 50px;
+  .line-1 {
+    margin-bottom: 12px;
+  }
+  .line-2 {
+    font-size: 19px;
+    margin-bottom: 20px;
+  }
+  .line-3 {
+    display: flex;
+  }
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.header {
+  height: 60px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  .header-internal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .header-logo {
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(255, 255, 255, 0.98);
+    font-size: 20px;
+    margin: 0 10px 0 10px;
+  }
+
+  .header-links {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  .header-link {
+    margin: 0 10px 0 10px;
+    color: rgba(255, 255, 255, 0.91);
+  }
+}
+
+
+.bs-button {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  border: 0;
+  border-radius: 5px;
+  padding: 6px 14px 6px 14px;
+  background-color: #dc4848;
+  color: white;
+  font-size: 15px;
+  cursor: hand;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bs-button-outline {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: transparent;
+  padding: 6px 14px 6px 14px;
+  color: white;
+  font-size: 15px;
+  cursor: hand;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 10px;
+}
+
+.footer {
+  height: 60px;
+}
+
+.blip {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0 550px 400px 0;
+}
+
+.blip-base {
+  position: absolute;
+  background: white;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  z-index: -6;
+}
+
+.blip-pulse {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background: white;
+  top: 50%;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-animation: blip 3s infinite ease-out-in;
+  -webkit-animation-name: blip;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes blip {
+  0% {
+    -webkit-transform: scale(0.1);
+    opacity: 0;
+  }
+
+  1% {
+    -webkit-transform: scale(0.1);
+    opacity: .6;
+  }
+
+  60% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+sup {
+  vertical-align: super;
+  font-size: small;
+}
